@@ -7,8 +7,8 @@
         <li class="nav-item {{ Request::routeIs('index') ? 'active' : '' }}">
           <a class="nav-link" href="{{route('index')}}">Home</a>
         </li>
-        <li class="nav-item {{ Request::routeIs('regular.project') ? 'active' : '' }}">
-          <a class="nav-link" href="{{route('regular.project')}}">Project</a>
+        <li class="nav-item {{ Request::routeIs('projects.index') ? 'active' : '' }}">
+          <a class="nav-link" href="{{route('projects.index')}}">Project</a>
         </li>
         <li class="nav-item {{ Request::routeIs('employees.index') ? 'active' : '' }}">
           <a class="nav-link" href="{{ route('employees.index')}}">Employees</a>

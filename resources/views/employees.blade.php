@@ -20,10 +20,14 @@
     </thead>
 
     @foreach ($employees as $employee)
+    {{-- @foreach ($employee -> projects as $project) --}}
+    
+
+    {{-- @endforeach --}}
         <tr> 
             <td><h6>{{ $employee['id'] }}</h6></td>
             <td><h6>{{ $employee['firstname'] }}</h6></td>  
-            <td><h6>{{ $employee['project_id'] }}</h6></td>
+            {{-- <td><h6>{{ $project -> name }}</h6></td> --}}
             <td><form style="margin-right: -150px" action="{{ route('employees.show', $employee['id']) }}" method="GET">
                 <input class="btn btn-primary" type="submit" value="UPDATE">
                 </form></td>
@@ -49,7 +53,7 @@
 
     <form method="POST" action="/employees">
         @csrf
-        <label for="text">Employee firstname:</label><br>
+        <label for="text">Employee name:</label><br>
         <input type="text" id="firstname" name="firstname"><br>
         <label for="text">Project:</label><br>
         <input type="text" id="project_id" name="project_id"><br><br>
