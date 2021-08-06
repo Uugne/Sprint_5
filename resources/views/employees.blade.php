@@ -20,14 +20,11 @@
     </thead>
 
     @foreach ($employees as $employee)
-    {{-- @foreach ($employee -> projects as $project) --}}
-    
 
-    {{-- @endforeach --}}
         <tr> 
             <td><h6>{{ $employee['id'] }}</h6></td>
             <td><h6>{{ $employee['firstname'] }}</h6></td>  
-            {{-- <td><h6>{{ $project -> name }}</h6></td> --}}
+            <td><h6>{{ $employee -> project['name'] }}</h6></td>
             <td><form style="margin-right: -150px" action="{{ route('employees.show', $employee['id']) }}" method="GET">
                 <input class="btn btn-primary" type="submit" value="UPDATE">
                 </form></td>
@@ -56,7 +53,14 @@
         <label for="text">Employee name:</label><br>
         <input type="text" id="firstname" name="firstname"><br>
         <label for="text">Project:</label><br>
-        <input type="text" id="project_id" name="project_id"><br><br>
+        <select style="padding: 4px 13px" name="project_id" id="project_id">
+        <option value="">-- Select Project --</option>
+        @foreach (App\Models\Project::all() as $project)
+        
+        <option value="{{ $project['id'] }}">{{ $project['name'] }}</option>
+        
+        @endforeach
+    </select>
         <input class="btn btn-primary" type="submit" value="Submit">
     </form>
 

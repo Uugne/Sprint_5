@@ -20,15 +20,16 @@
     </thead>
 
     
-    @foreach ($projects as $project)
-    @foreach ($project -> employees as $employee)
-    
-        
+    @foreach ($projects as $project) 
+        @php $employee_firstnames = ''; @endphp
+    @foreach ($project -> employees as $employee) 
+        @php $employee_firstnames .= $employee -> firstname . ", ";  @endphp 
+      
     @endforeach 
         <tr> 
             <td><h6>{{ $project['id'] }}</h6></td>
             <td><h6>{{ $project['name'] }}</h6></td>
-            <td><h6>{{ $employee -> firstname }}</h6>
+            <td><h6>{{ $employee_firstnames }}</h6>
             <p style="font-size: 10px">Employees count: {{ count($project->employees) }} 
             <td><form style="margin-right: -150px" action="{{ route('projects.show', $project['id']) }}" method="GET">
                 <input class="btn btn-primary" type="submit" value="UPDATE">

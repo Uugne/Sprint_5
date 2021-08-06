@@ -19,7 +19,7 @@
         @error('name')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
-        <input type="text" name="name" value="{{ $project['name'] }}"><br>
-        <input class="btn btn-primary" type="submit" value="UPDATE">
+        <input style="margin: 10px" type="text" name="name" value="{{ $project['name'] }}"><br>
+        <input style="margin: 10px" class="btn btn-primary" type="submit" value="UPDATE">
     </form>
 @endsection
