@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmployeesController;
 use App\Http\Controllers\ProjectsController;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {return view('welcome');})->name('index');
 
@@ -17,6 +18,10 @@ Route::get('/employees/{id}', [EmployeesController::class, 'show'])->name('emplo
 Route::post('/employees', [EmployeesController::class, 'store'])->name('employees.store');                 // create
 Route::delete('/employees/{id}', [EmployeesController::class, 'destroy'])->name('employees.destroy');      // delete
 Route::put('/employees/{id}', [EmployeesController::class, 'update'])->name('employees.update');           // update
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::any('/{any}', function(){ 
     print("404 - No such route!"); 
