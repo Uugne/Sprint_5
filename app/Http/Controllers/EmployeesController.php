@@ -48,8 +48,8 @@ class EmployeesController extends Controller
         $em->firstname = $request['firstname'];
         $em->project_id = $request['project_id'];
         return ($em->save() !== 1) ? 
-            redirect('/employees/'.$id)->with('status_success', 'Employee updated!') : 
-            redirect('/employees/'.$id)->with('status_error', 'Employee was not updated!');
+            redirect('/employees')->with('status_success', 'Employee updated!') : 
+            redirect('/employees')->with('status_error', 'Employee was not updated!');
     }
         
 }

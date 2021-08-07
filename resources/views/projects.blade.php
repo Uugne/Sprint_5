@@ -51,7 +51,7 @@
     <form method="POST" action="/projects">
         @csrf
         <label for="text">Project:</label><br>
-        <input type="text" id="name" name="name">
+        <input type="text" id="name" name="name" placeholder="Project name">
         <input class="btn btn-primary" type="submit" value="Submit">
     </form>
 

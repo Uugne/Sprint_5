@@ -51,8 +51,8 @@
     <form method="POST" action="/employees">
         @csrf
         <label for="text">Employee name:</label><br>
-        <input type="text" id="firstname" name="firstname"><br>
-        <label for="text">Project:</label><br>
+        <input type="text" id="firstname" name="firstname" placeholder="Employee name"><br>
+        <label style="margin-top: 15px" for="text">Project:</label><br>
         <select style="padding: 4px 13px" name="project_id" id="project_id">
         <option value="">-- Select Project --</option>
         @foreach (App\Models\Project::all() as $project)

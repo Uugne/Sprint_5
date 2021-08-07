@@ -21,7 +21,7 @@ class ProjectsController extends Controller
     public function store(Request $request){
     
         $this->validate($request, [
-               'name' => 'required',
+               'name' => 'required|unique:projects,name',
            ]);
     
         $pr = new \App\Models\Project();
@@ -44,8 +44,9 @@ class ProjectsController extends Controller
         $pr = \App\Models\Project::find($id);
         $pr->name = $request['name'];
         return ($pr->save() !== 1) ? 
-            redirect('/projects/'.$id)->with('status_success', 'Project updated!') : 
-            redirect('/projects/'.$id)->with('status_error', 'Project was not updated!');
+        redirect('/projects')->with('status_success', 'Project updated!') : 
+        redirect('/projects')->with('status_error', 'Project was not updated!');
+            
     }
         
 }
