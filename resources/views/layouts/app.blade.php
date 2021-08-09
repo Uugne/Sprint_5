@@ -23,18 +23,30 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
+                    
+                    @guest
+                    @auth
+                    <ul class="navbar-nav" style="list-style: none;">
+                        <li class="nav-item {{ Request::routeIs('index') ? 'active' : '' }}">
+                          <a class="nav-link" href="{{route('index')}}">Home</a>
+                        </li>
+                    @endauth    
+                    @else     
+                        <li class="nav-item" style="list-style: none;" {{ Request::routeIs('projects.index') ? 'active' : '' }}>
+                          <a class="nav-link" style="color: black" onMouseOver="this.style.color = 'brown'" onMouseOut="this.style.color='black'" href="{{route('projects.index')}}">Project</a>
+                        </li>
+                        <li class="nav-item" style="list-style: none;" {{ Request::routeIs('employees.index') ? 'active' : '' }}>
+                          <a class="nav-link" style="color: black" onMouseOver="this.style.color = 'brown'" onMouseOut="this.style.color='black'" href="{{ route('employees.index')}}">Employees</a>
+                        </li>
+                    @endguest    
                     </ul>
+ 
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -75,7 +87,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="container">
             @yield('content')
         </main>
     </div>

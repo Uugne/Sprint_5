@@ -21,8 +21,6 @@ Route::put('/employees/{id}', [EmployeesController::class, 'update'])->name('emp
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::any('/{any}', function(){ 
     print("404 - No such route!"); 
 })->where('any', '.*');
