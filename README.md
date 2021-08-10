@@ -20,7 +20,7 @@
 1. Download CRUD Script Zip file.
 2. Create a new database. 
 3. Edit .env.example file with appropriate credential for your database server.
-4. Install the composer ```composer install```
+4. Install the composer ```composer install``` inside the project.
 5. Run ```php artisan migrate```
 6. Open the project with ```php artisan serve```  
 
