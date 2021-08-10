@@ -11,7 +11,6 @@
     </head>
 
     <body class="antialiased">
-       @include('partials.header')
        <div class="container">
             @yield('content')
         </div>
