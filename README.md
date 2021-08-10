@@ -22,7 +22,8 @@
 3. Edit .env.example file with appropriate credential for your database server. Do not forget to remove .example extension.
 4. Install the composer ```composer install``` inside the project.
 5. Run ```php artisan migrate```
-6. Open the project with ```php artisan serve```  
+6. Run ```php artisan key: generate```
+7. Open the project with ```php artisan serve```  
 
 ## Author
 Ugnė [Github](https://github.com/Uugne) , [Linkedin](https://www.linkedin.com/in/ugne-kurkyte/)
