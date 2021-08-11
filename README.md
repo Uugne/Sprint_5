@@ -13,8 +13,8 @@
 - Laravel version 8.53.0 or higher.
 
 ## Concepts
-- MVC Architecture
-- Eloquent ORM
+- MVC Architecture.
+- Eloquent ORM.
 
 ## Installation
 1. Download CRUD Script Zip file.
